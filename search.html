@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinéma du Village – Recherche</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="container header-row">
+        <h1 class="brand">Cinéma du Village</h1>
+        <nav aria-label="Navigation principale">
+          <a class="nav-link" href="/index.html">Tendances</a>
+          <a class="nav-link" href="/search.html" aria-current="page"
+            >Recherche</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section class="hero">
+        <h2>Rechercher un film</h2>
+        <p>Résultats en temps réel (sans rechargement de page).</p>
+      </section>
+
+      <section class="section" aria-labelledby="search-title">
+        <div class="section-head">
+          <h3 id="search-title">Recherche</h3>
+          <div
+            class="status"
+            role="status"
+            aria-live="polite"
+            id="status"
+          ></div>
+        </div>
+
+        <form
+          class="search-bar"
+          role="search"
+          aria-label="Recherche de films"
+          onsubmit="return false;"
+        >
+          <label class="sr-only" for="q">Rechercher</label>
+          <input
+            id="q"
+            name="q"
+            type="search"
+            class="input"
+            placeholder="Ex: Guardians of the Galaxy"
+            autocomplete="off"
+          />
+        </form>
+
+        <div class="filters" aria-label="Filtres de recherche">
+          <div>
+            <label class="sr-only" for="type">Type</label>
+            <select id="type" class="input" aria-label="Type de contenu">
+              <option value="movie">Film</option>
+              <option value="series">Série</option>
+              <option value="game">Jeu</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="sr-only" for="year">Année</label>
+            <input
+              id="year"
+              class="input"
+              inputmode="numeric"
+              placeholder="Année (ex: 2012)"
+              aria-label="Année"
+            />
+          </div>
+        </div>
+
+        <div id="grid" class="grid" aria-busy="false"></div>
+        <div id="loader" class="loader" role="status" aria-live="polite"></div>
+        <div id="sentinel" aria-hidden="true"></div>
+
+        <div class="actions">
+          <button id="loadMore" class="btn" type="button" disabled>
+            Charger plus
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Données : OMDb API</small>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/pages/search/search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinéma du Village – Tendances</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="container header-row">
+        <h1 class="brand">Cinéma du Village</h1>
+        <nav aria-label="Navigation principale">
+          <a class="nav-link" href="/index.html" aria-current="page"
+            >Tendances</a
+          >
+          <a class="nav-link" href="/search.html">Recherche</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section class="hero">
+        <h2>Films tendances</h2>
+        <p>Une sélection de films populaires (données OMDb).</p>
+      </section>
+
+      <section aria-labelledby="trending-title" class="section">
+        <div class="section-head">
+          <h3 id="trending-title">À l’affiche</h3>
+          <div
+            class="status"
+            role="status"
+            aria-live="polite"
+            id="status"
+          ></div>
+        </div>
+
+        <div id="grid" class="grid" aria-busy="false"></div>
+
+        <div class="actions">
+          <button id="loadMore" class="btn" type="button">Charger plus</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Données : OMDb API</small>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/pages/index/index.js"></script>
+  </body>
+</html>

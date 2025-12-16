@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails du film</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="container header-row">
+        <h1 class="brand">Cinéma du Village</h1>
+        <nav aria-label="Navigation principale">
+          <a class="nav-link" href="/index.html">Tendances</a>
+          <a class="nav-link" href="/search.html">Recherche</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <div class="actions top-actions">
+        <a class="btn btn-secondary" href="/index.html">Retour</a>
+      </div>
+
+      <section class="section">
+        <div class="section-head">
+          <h2 id="title">Chargement…</h2>
+          <div
+            class="status"
+            role="status"
+            aria-live="polite"
+            id="status"
+          ></div>
+        </div>
+
+        <article class="movie-layout" aria-busy="false" id="movie">
+          <div class="poster-wrap">
+            <img id="poster" class="poster" alt="" />
+          </div>
+
+          <div class="movie-info">
+            <p class="muted" id="meta"></p>
+
+            <h3>Résumé</h3>
+            <p id="plot"></p>
+
+            <h3>Détails</h3>
+            <ul class="specs">
+              <li><strong>Genre :</strong> <span id="genre"></span></li>
+              <li><strong>Acteurs :</strong> <span id="actors"></span></li>
+              <li><strong>Notes :</strong> <span id="ratings"></span></li>
+              <li><strong>Sortie DVD :</strong> <span id="dvd"></span></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Données : OMDb API</small>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/pages/movie/movie.js"></script>
+  </body>
+</html>
